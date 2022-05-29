@@ -88,7 +88,7 @@ export function AuthProvider({children}) {
         } else {
 
             console.log('metamask not detected')
-            toast.dark("Wallet not detected, please install ethereum wallet like Metamask", {position:toast.POSITION.TOP_CENTER});
+            toast.error("Wallet not detected, please install ethereum wallet like Metamask", {position:toast.POSITION.TOP_CENTER});
         }
        
     }

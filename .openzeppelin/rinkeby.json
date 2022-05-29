@@ -30,6 +30,16 @@
       "address": "0x82Bb8DF5B6D31318E6cb2c090e5cC9e91c000112",
       "txHash": "0x486b8a9bca10592fb8901d0ae47b97c7e64d72b9894a56963e223cde10650bd1",
       "kind": "uups"
+    },
+    {
+      "address": "0xBe7AD087580a2dFc7C3045405655942408716EEA",
+      "txHash": "0xa0e4093f267b7ef62a2203d6a1576f3004e109f719767646b37c27e239057f43",
+      "kind": "uups"
+    },
+    {
+      "address": "0x15D0c9D37F4F09948d88d814E05e70e6eDda87d9",
+      "txHash": "0x4629c9cba2e6194b438c8e0110d7e5ba3173ce6cd23cb43ca482aa5bdc5c6a94",
+      "kind": "uups"
     }
   ],
   "impls": {
@@ -712,6 +722,186 @@
     "7db6e3fa7f33215fbfde29cf926da2affb32cbb3e71208f50a974413aaadb4e7": {
       "address": "0x96cCa4e3434bFCe998B2ce3D235cF8D920B7c358",
       "txHash": "0xf9b3ae75950b7121fde0d88420021785828c18fa0a95b1157659b3765e797991",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\ERC1967\\ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\security\\ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\security\\ReentrancyGuardUpgradeable.sol:74"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "label": "_itemIds",
+            "offset": 0,
+            "slot": "251",
+            "type": "t_struct(Counter)3448_storage",
+            "contract": "Logic",
+            "src": "contracts\\Logic.sol:15"
+          },
+          {
+            "label": "_itemsSold",
+            "offset": 0,
+            "slot": "252",
+            "type": "t_struct(Counter)3448_storage",
+            "contract": "Logic",
+            "src": "contracts\\Logic.sol:16"
+          },
+          {
+            "label": "tokenAccepted",
+            "offset": 0,
+            "slot": "253",
+            "type": "t_contract(IERC20Upgradeable)1583",
+            "contract": "Logic",
+            "src": "contracts\\Logic.sol:17"
+          },
+          {
+            "label": "surveyPrice",
+            "offset": 0,
+            "slot": "254",
+            "type": "t_uint256",
+            "contract": "Logic",
+            "src": "contracts\\Logic.sol:18"
+          },
+          {
+            "label": "idToUsers",
+            "offset": 0,
+            "slot": "255",
+            "type": "t_mapping(t_address,t_struct(Users)3985_storage)",
+            "contract": "Logic",
+            "src": "contracts\\Logic.sol:36"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20Upgradeable)1583": {
+            "label": "contract IERC20Upgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_struct(Users)3985_storage)": {
+            "label": "mapping(address => struct Logic.Users)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Counter)3448_storage": {
+            "label": "struct CountersUpgradeable.Counter",
+            "members": [
+              {
+                "label": "_value",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Users)3985_storage": {
+            "label": "struct Logic.Users",
+            "members": [
+              {
+                "label": "user",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "minted",
+                "type": "t_bool",
+                "offset": 20,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "58d5d22a72394161e383388f96c3a42d6a17f83c0207cd19656242632d76c4ad": {
+      "address": "0x473566e8B8B4672cbEdd6aC75d0aB579FE25692B",
+      "txHash": "0x0d6e883335d0ac4bde2c4161d0cc0fe6e5983792ce3139ff4aa87507fd51ce72",
       "layout": {
         "storage": [
           {

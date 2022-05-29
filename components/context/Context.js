@@ -57,7 +57,7 @@ export function AuthProvider({children}) {
               if (err.code===-32002){
                 toast.error("MetaMask is waiting to connect", {position:toast.POSITION.TOP_CENTER});
               } else if (err.code===4001){
-                toast.dark("Request rejected", {position:toast.POSITION.TOP_CENTER});
+                toast.error("Request rejected", {position:toast.POSITION.TOP_CENTER});
               }
     
             

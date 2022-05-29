@@ -3,35 +3,35 @@ const fs = require('fs');
 
 async function main() {
 
- const nxttokem = await ethers.getContractFactory("MCT");
+ const token = await ethers.getContractFactory("MCT");
   console.log("Deploying MCT...");
-  const nxt = await upgrades.deployProxy(nxttokem, {
+  const tokenMCT = await upgrades.deployProxy(token, {
     initializer: "initialize",
     });
 
-  await nxt.deployed();
-  const nxtaddr = nxt.address;
+  await tokenMCT.deployed();
+  const tokenaddr = tokenMCT.address;
 
-  console.log("token deployed at :", nxtaddr);
+  console.log("token deployed at :", tokenaddr);
 
   console.log("Deploying Logic contract...");
-  const NFTMarket = await ethers.getContractFactory("Logic");
-  const nftMarket = await upgrades.deployProxy(NFTMarket, [nxtaddr], {
+  const LogicSM = await ethers.getContractFactory("Logic");
+  const logicdeployed = await upgrades.deployProxy(LogicSM, [tokenaddr], {
     initializer: "initialize",
     });
 
-  await nftMarket.deployed();
-  console.log("nftMarket deployed to:", nftMarket.address);
+  await logicdeployed.deployed();
+  console.log("login smart contract deployed to:", logicdeployed.address);
   
 
   let config = `
-  export const nftmarketeth = "${nftMarket.address}"
-  export const tokenAddresseth ="${nxtaddr}"
+  export const logicAddr = "${logicdeployed.address}"
+  export const tokenAddr ="${tokenaddr}"
   `
 
 
   let data = JSON.stringify(config)
-  fs.writeFileSync('./contract-addresses/ethconfig.js', JSON.parse(data))
+  fs.writeFileSync('./contracts-config/config.js', JSON.parse(data))
 
 }
 

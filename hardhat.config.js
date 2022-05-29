@@ -4,7 +4,7 @@ require( "@nomiclabs/hardhat-etherscan")
 
 
 const fs = require('fs')
-const privateKey = fs.readFileSync("secret").toString().trim() // || "another key" // nxt account private key 
+const privateKey = fs.readFileSync("secret").toString().trim() // || "another key" // alltest account private key 
 const projectId ="a7f442a9089b4e56848787858b0cf14c"
 const keylocal = "17abeb9c3c27fbef99ea5ad66619cf56bc677198450d4836734f4061a726f39b" // ganache
 

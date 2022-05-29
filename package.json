@@ -16,6 +16,7 @@
     "ipfs-http-client": "^56.0.1",
     "millify": "^4.0.0",
     "next": "12.1.4",
+    "number-precision": "^1.5.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",

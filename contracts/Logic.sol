@@ -23,7 +23,7 @@ contract Logic is Initializable, UUPSUpgradeable, ReentrancyGuardUpgradeable, Ow
         __Ownable_init();
         __UUPSUpgradeable_init();
         tokenAccepted =IERC20Upgradeable(_token);
-        surveyPrice=2;
+        surveyPrice= 2 ether;
       
     }
 
@@ -48,12 +48,12 @@ contract Logic is Initializable, UUPSUpgradeable, ReentrancyGuardUpgradeable, Ow
     require(!ifUserMinted(msg.sender),"already minted for this survey");
   
     idToUsers[msg.sender] =  Users(
-
       msg.sender,
       true
     );
 
-    IERC20Upgradeable(tokenAccepted).transferFrom(address(this),msg.sender, surveytotal*surveyPrice);
+    //IERC20Upgradeable(tokenAccepted).transferFrom(address(this), msg.sender, surveytotal*surveyPrice);
+    IERC20Upgradeable(tokenAccepted).transfer(msg.sender, surveytotal*surveyPrice);
 
     emit UserMinted(
  

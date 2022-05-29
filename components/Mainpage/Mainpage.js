@@ -48,7 +48,7 @@ async function Count (){
         let mint = await contract.survey(Number(sum))
         
         await mint.wait()
-
+        balance()
         toast.info("Successfully done!", {position:toast.POSITION.TOP_CENTER});
     
     } catch (error) {

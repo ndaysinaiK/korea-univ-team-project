@@ -29,7 +29,7 @@ function Mainpage() {
                 <div className="flex items-center justify-center">
                     <div className="flex items-center justify-between font-bold mt-10 text-white">
 
-                    <p className="mr-20">내 지갑</p>
+                    <p className="mr-20 underline underline-offset-8">내 지갑</p>
                     <p className="text-gray-300">내역.혜택</p>
 
                     </div>

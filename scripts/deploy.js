@@ -1,32 +1,38 @@
-const hre = require("hardhat");
+const { ethers, upgrades } = require("hardhat");
 const fs = require('fs');
 
 async function main() {
 
- /* const nxttokem = await hre.ethers.getContractFactory("NxTB");
-  const nxt = await nxttokem.deploy();
+ const nxttokem = await ethers.getContractFactory("MCT");
+  console.log("Deploying MCT...");
+  const nxt = await upgrades.deployProxy(nxttokem, {
+    initializer: "initialize",
+    });
+
   await nxt.deployed();
   const nxtaddr = nxt.address;
 
   console.log("token deployed at :", nxtaddr);
 
-  const NFTMarket = await hre.ethers.getContractFactory("NFTMarket");
-  const nftMarket = await NFTMarket.deploy(nxtaddr);
-  await nftMarket.deployed();
-  console.log("nftMarket deployed to:", nftMarket.address);*/
+  const addressfee="0x28c68B313220f7677739844fB7D3df6C382A2224";
+  console.log("Deploying Logic contract...");
+  const NFTMarket = await ethers.getContractFactory("Logic");
+  const nftMarket = await upgrades.deployProxy(NFTMarket, [nxtaddr,addressfee], {
+    initializer: "initialize",
+    });
 
-  const NFT = await hre.ethers.getContractFactory("NFT");
-  const nft = await NFT.deploy("0x324a3D5951F94b40C566B180066D6B2ab7BE8D54","https://www.nxtshare-public.com/api/metadata/");
-  await nft.deployed();
-  console.log("nft deployed to:", nft.address);
+  await nftMarket.deployed();
+  console.log("nftMarket deployed to:", nftMarket.address);
+  
 
   let config = `
-  export const nftaddress = "${nft.address}"
-
+  export const nftmarketeth = "${nftMarket.address}"
+  export const tokenAddresseth ="${nxtaddr}"
   `
 
+
   let data = JSON.stringify(config)
-  fs.writeFileSync('./contracts-config/config.js', JSON.parse(data))
+  fs.writeFileSync('./contract-addresses/ethconfig.js', JSON.parse(data))
 
 }
 

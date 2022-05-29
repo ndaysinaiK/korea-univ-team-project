@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "npx hardhat run ./scripts/deploy.js --network rinkeby",
     "lint": "next lint"
   },
   "dependencies": {

@@ -14,10 +14,9 @@ async function main() {
 
   console.log("token deployed at :", nxtaddr);
 
-  const addressfee="0x28c68B313220f7677739844fB7D3df6C382A2224";
   console.log("Deploying Logic contract...");
   const NFTMarket = await ethers.getContractFactory("Logic");
-  const nftMarket = await upgrades.deployProxy(NFTMarket, [nxtaddr,addressfee], {
+  const nftMarket = await upgrades.deployProxy(NFTMarket, [nxtaddr], {
     initializer: "initialize",
     });
 

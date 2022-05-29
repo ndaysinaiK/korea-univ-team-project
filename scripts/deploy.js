@@ -26,7 +26,7 @@ async function main() {
   `
 
   let data = JSON.stringify(config)
-  fs.writeFileSync('./pages/contracts-config/config.js', JSON.parse(data))
+  fs.writeFileSync('./contracts-config/config.js', JSON.parse(data))
 
 }
 

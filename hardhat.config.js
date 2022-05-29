@@ -10,7 +10,7 @@ const keylocal = "17abeb9c3c27fbef99ea5ad66619cf56bc677198450d4836734f4061a726f3
 
 module.exports = {
   paths:{
-    artifacts: './pages/artifacts',
+    artifacts: './artifacts',
   },
   defaultNetwork: "hardhat",
   networks: {

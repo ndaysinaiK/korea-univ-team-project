@@ -47,7 +47,7 @@ function Mainpage() {
                                 <a style={{fontSize:'10px'}} className="font-bold">123 Mental Coins</a>
                             </p>}
                             {!currentUser&&
-                            <p onClick={()=>LoaduserInfo()} className=" w-2/4 rounded-full border flex items-center justify-center text-black p-3 text-sm border-black mr-3 cursor-pointer">로그인</p>}
+                            <p onClick={()=>LoaduserInfo()} className=" w-2/4 rounded-full border flex items-center justify-center text-black p-3 text-sm border-black mr-3 cursor-pointer">메타마스크 연결</p>}
                             <p className=" w-2/4 rounded-full bg-green-500 border flex items-center justify-center text-white p-3 text-sm border-black mr-3 cursor-pointer">충전하기</p>
                         </div>
 

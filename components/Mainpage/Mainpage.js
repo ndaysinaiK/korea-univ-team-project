@@ -6,6 +6,11 @@ import { toast } from 'react-toastify';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 import NP from 'number-precision';
+import loadinggif from '../assets/images/loader.gif';
+import finalpic from '../assets/images/finalpic.png';
+import logo from '../assets/images/logo.png';
+
+import Image from "next/image"
 
 import { 
     tokenAddr, logicAddr
@@ -20,6 +25,8 @@ function Mainpage() {
     const {LoaduserInfo,currentUser} = useAuth();   
     const [survey,setSurvey]=useState(false);
     const [bal,setB]=useState(0)
+    const [minting,setMinting]=useState(false);
+    const [showdone,setDone]=useState(false);
 
 
     useEffect(() => {
@@ -28,6 +35,7 @@ function Mainpage() {
 
       
 async function Count (){
+    setMinting(true)
     var radios = document.getElementsByClassName('radios');
     var sum=0;
     for (var i = 0, length = radios.length; i < length; i++) {
@@ -50,9 +58,12 @@ async function Count (){
         await mint.wait()
         balance()
         toast.info("Successfully done!", {position:toast.POSITION.TOP_CENTER});
+        setMinting(false)
+        setDone(true)
     
     } catch (error) {
         toast.error(`error occured ${error}`, {position:toast.POSITION.TOP_CENTER});
+        setMinting(false)
     }
 
 
@@ -83,8 +94,6 @@ async function balance () {
   return (
     <div className="flex flex-col justify-center items-center bg-gray-200">
 
-     
-
         <div className="bg-white rounded-t-3xl shadow-lg w-4/5 sm:w-1/4 mt-20 p-4 ">
 
             <div className="flex items-center justify-center">
@@ -95,8 +104,9 @@ async function balance () {
             </div>
 
             <div className="bg-green-500 rounded-md h-40 mt-5">
-                <div className="text-white pt-3 text-xl">
-                    <b className=" ml-5">Mental</b>
+                <div className="text-white flex items-center text-xl">
+                    <Image src={logo} height="100px" width="80px"/>
+                    <b className="-ml-3">Mental</b>
                 </div>
 
                 <div className="flex items-center justify-center">
@@ -147,7 +157,7 @@ async function balance () {
                     <p className="text-green-500 font-bold"> {'>'} </p>
                 </div>
 
-                {survey&&<div className="border border-black w-6/6 p-2 mt-3">
+                {survey&&!showdone&&<div className="border border-black w-6/6 p-2 mt-3">
                
 
                     <div className="flex justify-between items-center mt-2">
@@ -215,13 +225,28 @@ async function balance () {
 
                     </div>
 
-                    <div onClick={()=>Count()} className="flex items-center justify-center bg-green-600 mt-3 p-4 text-white border border-black cursor-pointer">
-                        <p>설문완료</p>
+                    <div  className="flex items-center flex-col justify-center ">
+
+                        {!minting&&<div onClick={()=>Count()} className="bg-green-600 mt-3 mb-8 p-4 text-white border border-black cursor-pointer"><p>설문완료</p></div>}
+                   
+                        {minting&&<div className="flex flex-col items-center justify-center mb-1" >
+                            <Image src={loadinggif} height="100px" width="150px"/>
+                        </div>}
+
                     </div>
 
                 </div>}
 
+                {showdone&&<div className="">  {/** final screen */}
+                    <Image src={finalpic}/>
+                    <div className="flex items-center justify-center bg-green-600 mt-3 mb-8 p-4 text-white border border-black cursor-pointer"><p>상담하기</p></div>
+                </div>}
+
             </div>
+
+  
+
+            
 
          
    

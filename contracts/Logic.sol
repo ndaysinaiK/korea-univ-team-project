@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: NxtBloc and Korea-University 
+// SPDX-License-Identifier: MIT and Korea-University 
 pragma solidity ^0.8.3;
 
 import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";

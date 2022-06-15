@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT and Nxtbloc
+// SPDX-License-Identifier: NxtBloc and Korea-University 
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";

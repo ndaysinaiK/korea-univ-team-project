@@ -4,8 +4,8 @@ require( "@nomiclabs/hardhat-etherscan")
 
 
 const fs = require('fs')
-const privateKey = fs.readFileSync("secret").toString().trim() // || "another key" // alltest account private key 
-const projectId ="a7f442a9089b4e56848787858b0cf14c"
+const privateKey = fs.readFileSync("secret").toString().trim() // || "another key" //  account private key in secret file
+const projectId ="17abeb9c3c27fbef99ea5ad66619cf56bc677198450d4836734f4061a726f39b" // infura project id
 const keylocal = "17abeb9c3c27fbef99ea5ad66619cf56bc677198450d4836734f4061a726f39b" // ganache
 
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
     }
   },
   etherscan: {
-    apiKey: "AT9HM2CY1HHS27WAI2J3WF6FGC3NH5V8TX",
+    apiKey: "17abeb9c3c27fbef99ea5ad66619cf56bc677198450d4836734f4061a726f39b", // eth scan api key
   },
   solidity: {
     version: "0.8.4",

@@ -17,8 +17,6 @@ contract Logic is Initializable, UUPSUpgradeable, ReentrancyGuardUpgradeable, Ow
   IERC20Upgradeable public tokenAccepted;
   uint256 surveyPrice;
   
-
-
    function initialize(address _token) initializer public {
         __Ownable_init();
         __UUPSUpgradeable_init();
@@ -52,7 +50,6 @@ contract Logic is Initializable, UUPSUpgradeable, ReentrancyGuardUpgradeable, Ow
       true
     );
 
-    //IERC20Upgradeable(tokenAccepted).transferFrom(address(this), msg.sender, surveytotal*surveyPrice);
     IERC20Upgradeable(tokenAccepted).transfer(msg.sender, surveytotal*surveyPrice);
 
     emit UserMinted(
@@ -61,7 +58,6 @@ contract Logic is Initializable, UUPSUpgradeable, ReentrancyGuardUpgradeable, Ow
       true
     );
   }
-
 
   function ifUserMinted(address user) public view returns (bool result) {
 
@@ -86,6 +82,5 @@ contract Logic is Initializable, UUPSUpgradeable, ReentrancyGuardUpgradeable, Ow
         onlyOwner
         override
     {}
-
 
 }

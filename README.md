@@ -6,6 +6,10 @@ DEMO link : https://medimind.vercel.app/
 
 
 
+![image](https://user-images.githubusercontent.com/74330893/174569000-203f57d3-bdb8-44e3-8ec1-430566ec640f.png)
+
+
+
 ## Description:
 
 Most companies need data to enhance their systems, and data comes from users who mostly don't get rewarded.
@@ -13,8 +17,6 @@ We built a prototype where users are rewarded for participating in patient data 
 This prototype can be used as a learning tool and improved for different use cases.
 
 
-
-![image](https://user-images.githubusercontent.com/74330893/174569000-203f57d3-bdb8-44e3-8ec1-430566ec640f.png)
 
 
 ## Run it on local

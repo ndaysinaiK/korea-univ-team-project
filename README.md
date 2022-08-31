@@ -13,7 +13,7 @@ DEMO link : https://medimind.vercel.app/
 ## Description:
 
 Most companies need data to enhance their systems, and data comes from users who mostly don't get rewarded.
-We built a prototype where users are rewarded for participating in patient data collection via a survey. 
+We built a prototype Dapp that allows users to be rewarded in token for participating in patient data collection via a survey. 
 This prototype can be used as a learning tool and improved for different use cases.
 
 
